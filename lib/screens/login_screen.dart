@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mobiletask/screens/list_view_screen.dart';
 import 'package:mobiletask/widgets/login_text_fields.dart';
 import 'package:sizer/sizer.dart';
 
 class MyHomePage extends StatefulWidget {
+  static const String id = '/';
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
@@ -37,21 +39,26 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 15),
-              decoration: const BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.all(Radius.circular(10))),
-              width: 100.w,
-              child: const Center(
-                  child: Text(
-                'Login',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              )),
+            GestureDetector(
+              onTap: () {
+                Navigator.popAndPushNamed(context, ListViewScreen.id);
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                decoration: const BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                width: 100.w,
+                child: const Center(
+                    child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+              ),
             ),
           ],
         ),
