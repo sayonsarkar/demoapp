@@ -1,28 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobiletask/widgets/login_text_fields.dart';
 import 'package:sizer/sizer.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Sizer(
-      builder: (BuildContext context, Orientation orientation,
-          DeviceType deviceType) {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const MyHomePage(title: 'Login Page'),
-        );
-      },
-    );
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -76,28 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class LoginTextField extends StatelessWidget {
-  final String labelText;
-  final Icon icon;
-  const LoginTextField({Key? key, required this.labelText, required this.icon})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        prefixIcon: icon,
-        label: Text(labelText),
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.grey,
-          ),
         ),
       ),
     );
